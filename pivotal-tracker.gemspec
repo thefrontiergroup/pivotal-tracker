@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Smestad", "Josh Nichols", "Terence Lee"]
-  s.date = %q{2010-12-15}
+  s.date = %q{2011-06-22}
   s.email = %q{justin.smestad@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -58,6 +58,7 @@ Gem::Specification.new do |s|
      "spec/support/stale_fish_fixtures.rb",
      "spec/unit/pivotal-tracker/activity_spec.rb",
      "spec/unit/pivotal-tracker/attachment_spec.rb",
+     "spec/unit/pivotal-tracker/client_spec.rb",
      "spec/unit/pivotal-tracker/iteration_spec.rb",
      "spec/unit/pivotal-tracker/membership_spec.rb",
      "spec/unit/pivotal-tracker/note_spec.rb",
@@ -68,13 +69,14 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/jsmestad/pivotal-tracker}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.6.2}
   s.summary = %q{Ruby wrapper for the Pivotal Tracker API}
   s.test_files = [
     "spec/spec_helper.rb",
      "spec/support/stale_fish_fixtures.rb",
      "spec/unit/pivotal-tracker/activity_spec.rb",
      "spec/unit/pivotal-tracker/attachment_spec.rb",
+     "spec/unit/pivotal-tracker/client_spec.rb",
      "spec/unit/pivotal-tracker/iteration_spec.rb",
      "spec/unit/pivotal-tracker/membership_spec.rb",
      "spec/unit/pivotal-tracker/note_spec.rb",
@@ -84,25 +86,24 @@ Gem::Specification.new do |s|
   ]
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rest-client>, ["~> 1.6.0"])
       s.add_runtime_dependency(%q<happymapper>, [">= 0.3.2"])
       s.add_runtime_dependency(%q<builder>, [">= 0"])
-      s.add_runtime_dependency(%q<nokogiri>, ["~> 1.4.3.1"])
+      s.add_runtime_dependency(%q<nokogiri>, ["~> 1.4.4"])
       s.add_development_dependency(%q<rspec>, [">= 0"])
-      s.add_development_dependency(%q<bundler>, [">= 0.9.26"])
+      s.add_development_dependency(%q<bundler>, [">= 1.0.0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<stale_fish>, ["~> 1.3.0"])
     else
       s.add_dependency(%q<rest-client>, ["~> 1.6.0"])
       s.add_dependency(%q<happymapper>, [">= 0.3.2"])
       s.add_dependency(%q<builder>, [">= 0"])
-      s.add_dependency(%q<nokogiri>, ["~> 1.4.3.1"])
+      s.add_dependency(%q<nokogiri>, ["~> 1.4.4"])
       s.add_dependency(%q<rspec>, [">= 0"])
-      s.add_dependency(%q<bundler>, [">= 0.9.26"])
+      s.add_dependency(%q<bundler>, [">= 1.0.0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<stale_fish>, ["~> 1.3.0"])
     end
@@ -110,9 +111,9 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<rest-client>, ["~> 1.6.0"])
     s.add_dependency(%q<happymapper>, [">= 0.3.2"])
     s.add_dependency(%q<builder>, [">= 0"])
-    s.add_dependency(%q<nokogiri>, ["~> 1.4.3.1"])
+    s.add_dependency(%q<nokogiri>, ["~> 1.4.4"])
     s.add_dependency(%q<rspec>, [">= 0"])
-    s.add_dependency(%q<bundler>, [">= 0.9.26"])
+    s.add_dependency(%q<bundler>, [">= 1.0.0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<stale_fish>, ["~> 1.3.0"])
   end

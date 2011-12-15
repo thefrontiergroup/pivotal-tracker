@@ -38,6 +38,7 @@ module PivotalTracker
     element :author, String
     element :project_id, Integer
     element :description, String
+    element :label, String
 
     has_many :stories, Story
 
